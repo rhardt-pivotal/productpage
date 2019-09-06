@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: productpage
+  namespace: cf-workloads
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    guid: 18c95ddb-7633-4849-b3da-4c0113fbba97
+  type: ClusterIP

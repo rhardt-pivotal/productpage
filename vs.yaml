@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: productpage
+spec:
+  hosts:
+  - "productpage.mesh.k8s.labs.local"
+  gateways:
+  - istio-system/istio-wildcard-gateway
+  http:
+  - match:
+    route:
+    - destination:
+        host: productpage.cf-workloads.svc.cluster.local
+        port:
+          number: 80

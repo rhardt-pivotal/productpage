@@ -1,0 +1,9 @@
+---
+applications:
+- name: productpage
+  buildpacks: 
+  - python_buildpack
+  path: .
+  command: python productpage.py 8080
+  env:
+    SERVICES_DOMAIN: cf-workloads.svc.cluster.local
